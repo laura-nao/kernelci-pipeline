@@ -119,6 +119,16 @@ scheduler:
   - job: kbuild-gcc-10-x86-chromeos-stoneyridge
     <<: *build-k8s-all
 
+  - job: kselftest-acpi
+    event:
+      channel: node
+      name: kbuild-gcc-10-arm64
+      result: pass
+    runtime:
+      type: lava
+      name: lava-collabora
+    platforms: *intel-pineview-platforms
+
   - job: kselftest-dt
     <<: *lava-job-collabora
     event:
