@@ -209,11 +209,41 @@ monitor-build-regressions-x86_64-mainline-next:
           - tree: mainline
           - tree: next
 
+summary-build-regressions-x86_64-mainline-next:
+  metadata:
+    action: summary
+    title: "KernelCI build regressions found on mainline and next for x86_64"
+    template: "generic-regressions.html.jinja2"
+    output_file: "build-regressions-mainline-next-x86_64.html"
+  preset:
+    regression:
+      - data.error_code: null
+        name__re: kbuild
+        data.arch: x86_64
+        repos:
+          - tree: mainline
+          - tree: next
+
 monitor-build-failures-x86_64-mainline-next:
   metadata:
     action: monitor
     title: "KernelCI build failures found on mainline and next for x86_64"
     template: "generic-test-failure-report.html.jinja2"
+    output_file: "build-failures-mainline-next-x86_64.html"
+  preset:
+    kbuild:
+      - data.error_code: null
+        result: fail
+        data.arch: x86_64
+        repos:
+          - tree: mainline
+          - tree: next
+
+summary-build-failures-x86_64-mainline-next:
+  metadata:
+    action: summary
+    title: "KernelCI build failures found on mainline and next for x86_64"
+    template: "generic-test-results.html.jinja2"
     output_file: "build-failures-mainline-next-x86_64.html"
   preset:
     kbuild:
@@ -239,6 +269,21 @@ monitor-baseline-regressions-x86_64-mainline-next:
           - tree: mainline
           - tree: next
 
+summary-baseline-regressions-x86_64-mainline-next:
+  metadata:
+    action: summary
+    title: "KernelCI baseline regressions found on mainline and next for x86_64"
+    template: "generic-regressions.html.jinja2"
+    output_file: "baseline-regressions-mainline-next-x86_64.html"
+  preset:
+    regression:
+      - data.error_code: null
+        group__re: baseline
+        data.arch: x86_64
+        repos:
+          - tree: mainline
+          - tree: next
+
 monitor-baseline-failures-x86_64-mainline-next:
   metadata:
     action: monitor
@@ -249,6 +294,38 @@ monitor-baseline-failures-x86_64-mainline-next:
     test:
       - data.error_code: null
         result: fail
+        group__re: baseline
+        data.arch: x86_64
+        repos:
+          - tree: mainline
+          - tree: next
+
+summary-baseline-failures-x86_64-mainline-next:
+  metadata:
+    action: summary
+    title: "KernelCI baseline failures found on mainline and next for x86_64"
+    template: "generic-test-results.html.jinja2"
+    output_file: "baseline-failures-mainline-next-x86_64.html"
+  preset:
+    test:
+      - data.error_code: null
+        result: fail
+        group__re: baseline
+        data.arch: x86_64
+        repos:
+          - tree: mainline
+          - tree: next
+
+summary-baseline-pass-x86_64-mainline-next:
+  metadata:
+    action: summary
+    title: "KernelCI baseline passed tests found on mainline and next for x86_64"
+    template: "generic-test-results.html.jinja2"
+    output_file: "baseline-pass-mainline-next-x86_64.html"
+  preset:
+    test:
+      - data.error_code: null
+        result: pass
         group__re: baseline
         data.arch: x86_64
         repos:
@@ -282,6 +359,47 @@ monitor-kselftest-acpi-failures-collabora-next:
       - data.error_code: null
         result: fail
         group: kselftest-acpi
+        repos:
+          - tree: collabora-next
+
+summary-kselftest-acpi-regressions-collabora-next:
+  metadata:
+    action: summary
+    title: "KernelCI kselftest-acpi regressions found on collabora-next"
+    template: "generic-regressions.html.jinja2"
+    output_file: "kselftest-acpi-regressions-collabora-next.html"
+  preset:
+    regression:
+      - data.error_code: null
+        group: kselftest-acpi
+        repos:
+          - tree: collabora-next
+
+summary-kselftest-acpi-failures-collabora-next:
+  metadata:
+    action: summary
+    title: "KernelCI kselftest-acpi failures found on collabora-next"
+    template: "generic-test-results.html.jinja2"
+    output_file: "kselftest-acpi-failures-collabora-next.html"
+  preset:
+    test:
+      - data.error_code: null
+        result: fail
+        group: kselftest-acpi
+        repos:
+          - tree: collabora-next
+
+summary-kselftest-acpi-pass-collabora-next:
+  metadata:
+    action: summary
+    title: "KernelCI kselftest-acpi passed tests found on collabora-next"
+    template: "generic-test-results.html.jinja2"
+    output_file: "kselftest-acpi-pass-collabora-next.html"
+  preset:
+    test:
+      - data.error_code: null
+        result: pass
+        name: kselftest-acpi
         repos:
           - tree: collabora-next
 
