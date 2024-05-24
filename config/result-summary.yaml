@@ -213,7 +213,7 @@ summary-build-regressions-x86_64-mainline-next:
   metadata:
     action: summary
     title: "KernelCI build regressions found on mainline and next for x86_64"
-    template: "generic-regressions.html.jinja2"
+    template: "generic-test-results-oneline.html.jinja2"
     output_file: "build-regressions-mainline-next-x86_64.html"
   preset:
     regression:
@@ -243,7 +243,7 @@ summary-build-failures-x86_64-mainline-next:
   metadata:
     action: summary
     title: "KernelCI build failures found on mainline and next for x86_64"
-    template: "generic-test-results.html.jinja2"
+    template: "generic-test-results-oneline.html.jinja2"
     output_file: "build-failures-mainline-next-x86_64.html"
   preset:
     kbuild:
@@ -304,7 +304,7 @@ summary-baseline-failures-x86_64-mainline-next:
   metadata:
     action: summary
     title: "KernelCI baseline failures found on mainline and next for x86_64"
-    template: "generic-test-results.html.jinja2"
+    template: "generic-test-results-oneline.html.jinja2"
     output_file: "baseline-failures-mainline-next-x86_64.html"
   preset:
     test:
@@ -320,7 +320,7 @@ summary-baseline-pass-x86_64-mainline-next:
   metadata:
     action: summary
     title: "KernelCI baseline passed tests found on mainline and next for x86_64"
-    template: "generic-test-results.html.jinja2"
+    template: "generic-test-results-oneline.html.jinja2"
     output_file: "baseline-pass-mainline-next-x86_64.html"
   preset:
     test:
@@ -379,7 +379,7 @@ summary-kselftest-acpi-failures-collabora-next:
   metadata:
     action: summary
     title: "KernelCI kselftest-acpi failures found on collabora-next"
-    template: "generic-test-results.html.jinja2"
+    template: "generic-test-results-oneline.html.jinja2"
     output_file: "kselftest-acpi-failures-collabora-next.html"
   preset:
     test:
@@ -393,7 +393,7 @@ summary-kselftest-acpi-pass-collabora-next:
   metadata:
     action: summary
     title: "KernelCI kselftest-acpi passed tests found on collabora-next"
-    template: "generic-test-results.html.jinja2"
+    template: "generic-test-results-oneline.html.jinja2"
     output_file: "kselftest-acpi-pass-collabora-next.html"
   preset:
     test:
